@@ -1,7 +1,7 @@
 
 {
-    "strategy": "FreqGym_rbm",
-    "max_open_trades": 3,
+    "strategy": "ClucaDCA",
+    "max_open_trades": 10,
     "stake_currency": "USD",
     "stake_amount": 200,
     "tradable_balance_ratio": 0.99,
@@ -44,6 +44,7 @@
         ],
         "pair_blacklist": [
             "(BNB)/.*",
+	    "*./USD"
             ".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*",
             "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*",
             "(BUSD|CUSDT|DAI|PAXG|SUSD|TUSD|USDC|USDP|USDT|VAI)/.*",
@@ -93,17 +94,6 @@
         "enabled": false,
         "token": "",
         "chat_id": ""
-    },
-    "api_server": {
-        "enabled": true,
-        "listen_ip_address": "127.0.0.1",
-        "listen_port": 20080,
-        "verbosity": "error",
-        "enable_openapi": false,
-        "jwt_secret_key": "595e9cb58c29748270a739db7aa127fc30a9ecfbf0d11fc9d977de4d8a86037f",
-        "CORS_origins": [],
-        "username": "freqtrader",
-        "password": ""
     },
     "bot_name": "freqtrade",
     "initial_state": "running",

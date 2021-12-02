@@ -12,7 +12,7 @@ This is based on the work of Al @ https://github.com/AlexBabescu/freqtrade_3comm
 ### Prerequisites
 > Working freqtrade installation,
 > 
-> A FTX account
+> A FTX account with enough USD/USDT in your wallet to trade futures. 
 
 ## Installation
 
@@ -23,7 +23,7 @@ Copy `exchange.py` and `ftx.py` to the `./freqtrade/exchange/` directory; overwr
 Copy `IPairList.py` to the `./freqtrade/plugins/pairlist/` directory; overwriting the existing file.
 
 
-Edit your existing `config.json` file. We need to filter to only enable PERP futures pairlists and filter the other USD spot market pairs. To do this add `".*/USD"` to your pairs blacklist and `".*PERP/.*"` to your whitelist.  See the example config. Make sure you've set your exchange to FTX (don't need to have keys in the config, we'll be running freqtrade as a dry run.
+Edit your existing `config.json` file. Set your `"stake_currency"` to `USD`. We need to filter to only enable PERP futures pairlists and filter the other USD spot market pairs. To do this add `".*/USD"` to your pairs blacklist and `".*PERP/.*"` to your whitelist.  See the example config. Make sure you've set your exchange to `ftx` (don't need to have keys in the config, we'll be running freqtrade as a dry run.
 
 ### Setting up freqtrade to send trades to 3commas
 

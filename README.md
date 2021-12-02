@@ -16,7 +16,44 @@ This is based on the work of Al @ https://github.com/AlexBabescu/freqtrade_3comm
 
 ## Installation
 
-###
+### Enabling FTX Future within freqtrade
 
-Enable 
+Copy `exchange.py` and `ftx.py` to the `./freqtrade/exchange/` directory; overwriting the existing files.
+
+Copy `IPairList.py` to the `./freqtrade/plugins/pairlist/` directory; overwriting the existing file.
+
+
+Edit your existing `config.json` file. We need to filter to only enable PERP futures pairlists and filter the other USD spot market pairs. To do this add `".*/USD"` to your pairs blacklist and `".*PERP/.*"` to your whitelist.  See the example config. Make sure you've set your exchange to FTX (don't need to have keys in the config, we'll be running freqtrade as a dry run.
+
+### Setting up freqtrade to send trades to 3commas
+
+Please follow the excellent documentation at https://github.com/AlexBabescu/freqtrade_3commas. Make sure you've created your bot, configured freqtrade within config.json and downloaded and installed the wrapper in the correct directory. 
+
+Once you have `freqtrade3cw.py` in your `user_data` folder; we need to do some modifications to enable freqtrade to send the right buy command to 3commas due to the way FTX names it's pairs
+
+From within `freqtrade3cw.py` we need to change:
+```
+coin, currency = metadata['pair'].split('/')
+```
+to:
+```
+coin = metadata['pair']
+```
+
+We then also need to change:
+```
+"pair": f"{currency}_{coin}",
+```
+to:
+```
+"pair": f"USD_{coin}",
+```
+
+### Start trading.
+
+Make sure you've imported `Freqtrade3cw` into your strategy and decorated the `populate_buy_trend` method (as described in the wrapper setup). Start freqtrade as you normally would (in a dry run) and keep an eye on 3commas as the signals come in.
+
+
+
+
 

@@ -29,7 +29,7 @@ Edit your existing `config.json` file. Set your `"stake_currency"` to `USD`. We 
 
 Please follow the excellent documentation at https://github.com/AlexBabescu/freqtrade_3commas. Make sure you've created your bot as a multi-pair/long only bot, configured freqtrade within config.json and downloaded and installed the wrapper in the correct directory. 
 
-Once you have `freqtrade3cw.py` in your `user_data` folder; we need to do some modifications to enable freqtrade to send the right buy command to 3commas due to the way FTX names it's pairs
+Once you have `freqtrade3cw.py` in your `user_data` folder; we need to do some modifications to enable freqtrade to send the right buy command to 3commas due to the way FTX names its pairs
 
 From within `freqtrade3cw.py` we need to change:
 ```

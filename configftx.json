@@ -14,6 +14,13 @@
         "sell": 30,
         "unit": "minutes"
     },
+    "3commas": {
+	"key": "3commas_key_goes_here",
+	"secret": "3commas_secret_goes_here",
+	"bot_ids": [
+		123456
+	]
+    },
     "bid_strategy": {
         "price_side": "bid",
         "ask_last_balance": 0.0,
@@ -43,7 +50,7 @@
         ],
         "pair_blacklist": [
             "(BNB)/.*",
-	    "*./USD"
+	    ".*/USD"
             ".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*",
             "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*",
             "(BUSD|CUSDT|DAI|PAXG|SUSD|TUSD|USDC|USDP|USDT|VAI)/.*",

@@ -28,9 +28,9 @@ Copy `IPairList.py` to the `./freqtrade/plugins/pairlist/` directory; overwritin
 
 Edit your existing `config.json` file. Set your `"stake_currency"` to `USD`. We need to filter to only enable PERP futures pairlists and filter the other USD spot market pairs. To do this add `".*/USD"` to your pairs blacklist and `".*PERP/.*"` to your whitelist.  If you wish to avoid trading non perpetual futures include `".*-([0123456789])+",` in your blacklist (thanks to stash on the freqtrade discord). See the example config. Make sure you've set your exchange to `ftx` (don't need to have keys in the config, we'll be running freqtrade as a dry run.
 
-#### Docker installation
+#### Docker installation (alternative)
 
-Use the supplied `docker-compose.yml' and 'dockerfile.custom' enable docker to copy the modified files into the docker image. If this fails, check the 'dockerfile.custom' path to make sure you've set the right source directory for it to find the files to copy. 
+We will need to overwrite the 'exchange.py, ftx.py and IPairList.py' within the docker image. You can't simply copy and paste them into a directory. You must use the supplied `docker-compose.yml' and 'dockerfile.custom' enable docker to copy the modified files into the docker image. If this fails, check the 'dockerfile.custom' path to make sure you've set the right source directory for it to find the files to copy. If your strat uses some python packages that are outside of the default; make sure they're included to be installed in the `dockerfile.custom`.
 
 ### 2. Setting up freqtrade to send trades to 3commas
 

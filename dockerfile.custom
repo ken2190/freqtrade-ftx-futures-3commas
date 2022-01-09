@@ -1,0 +1,13 @@
+FROM freqtradeorg/freqtrade:develop
+COPY freqtrade/exchange/exchange.py freqtrade/exchange/exchange.py
+COPY freqtrade/exchange/ftx.py freqtrade/freqtrade/exchange/ftx.py
+COPY freqtrade/plugins/pairlist/IPairList.py freqtrade/plugins/pairlist/IPairList.py
+
+# Switch user to root if you must install something from apt
+# Don't forget to switch the user back below!
+# USER root
+
+# The below dependency - pyti - serves as an example. Please use whatever you need!
+#RUN pip install --user pyti
+RUN pip install py3cw
+# USER ftuser 

@@ -30,7 +30,7 @@ Edit your existing `config.json` file. Set your `"stake_currency"` to `USD`. We 
 
 #### Docker installation (alternative)
 
-We will need to overwrite the 'exchange.py, ftx.py and IPairList.py' within the docker image. You can't simply copy and paste them into a directory. You must use the supplied `docker-compose.yml' and 'dockerfile.custom' enable docker to copy the modified files into the docker image. If this fails, check the 'dockerfile.custom' path to make sure you've set the right source directory for it to find the files to copy. If your strat uses some python packages that are outside of the default; make sure they're included to be installed in the `dockerfile.custom`.
+We will need to overwrite the `exchange.py, ftx.py and IPairList.py` within the docker image. You can't simply copy and paste them into a directory. You must use the supplied `docker-compose.yml` and `dockerfile.custom` enable docker to copy the modified files into the docker image. If this fails, check the `dockerfile.custom` path to make sure you've set the right source directory for it to find the files to copy. If your strat uses some python packages that are outside of the default; make sure they're included to be installed in the `dockerfile.custom`.
 
 ### 2. Setting up freqtrade to send trades to 3commas
 

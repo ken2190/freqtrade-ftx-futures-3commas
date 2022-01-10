@@ -1,7 +1,7 @@
-FROM freqtradeorg/freqtrade:develop
-COPY freqtrade/exchange/exchange.py freqtrade/exchange/exchange.py
-COPY freqtrade/exchange/ftx.py freqtrade/freqtrade/exchange/ftx.py
-COPY freqtrade/plugins/pairlist/IPairList.py freqtrade/plugins/pairlist/IPairList.py
+FROM freqtradeorg/freqtrade:2021.11
+COPY exchange.py freqtrade/exchange/exchange.py
+COPY ftx.py freqtrade/freqtrade/exchange/ftx.py
+COPY IPairList.py freqtrade/plugins/pairlist/IPairList.py
 
 # Switch user to root if you must install something from apt
 # Don't forget to switch the user back below!
